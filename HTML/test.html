@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Tài liệu HUST - Website chia sẻ tài liệu miễn phí dành cho sinh viên!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background: #fbfbfa;
+      font-family: 'Montserrat', Arial, sans-serif;
+      color: #2f2b2b;
+    }
+    .navbar {
+      background: #fff;
+      border-bottom: 1px solid #efcf98;
+      padding: 0 32px;
+      display: flex;
+      align-items: center;
+      height: 60px;
+      justify-content: space-between;
+    }
+    .navbar ul {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .navbar li {
+      position: relative;
+    }
+    .navbar a {
+      text-decoration: none;
+      color: #2f2b2b;
+      font-weight: 600;
+      padding: 8px 0;
+    }
+    .navbar input[type="text"] {
+      padding: 4px 8px;
+      border: 1px solid #9aa4a3;
+      border-radius: 4px;
+      outline: none;
+    }
+    .hero {
+      text-align: center;
+      margin-top: 26px;
+      margin-bottom: 8px;
+    }
+    .hero h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .tags {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .tags span {
+      background: #a72921;
+      color: #fff;
+      padding: 8px 18px;
+      border-radius: 18px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      display: inline-block;
+      margin-bottom: 6px;
+    }
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      display: flex;
+      gap: 32px;
+      padding-bottom: 32px;
+      justify-content: center;
+    }
+    .main {
+      flex: 2.5;
+    }
+    .sidebar {
+      flex: 1;
+      margin-top: 16px;
+    }
+    .post {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 1px 4px #0001;
+      margin-bottom: 24px;
+      padding: 22px 28px 16px;
+      border-left: 4px solid #a72921;
+      transition: all 0.15s;
+    }
+    .post .section {
+      color: #a72921;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+    .post h2 {
+      font-size: 1.2rem;
+      margin: 0 0 8px 0;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+    .post .date {
+      font-size: 0.90rem;
+      color: #9aa4a3;
+      margin-bottom: 14px;
+      display: block;
+    }
+    .post .readmore {
+      background: #fff;
+      color: #2f2b2b;
+      border: 1.5px solid #2f2b2b;
+      border-radius: 3px;
+      padding: 6px 18px;
+      font-weight: 600;
+      font-size: 0.97rem;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.15s;
+      display: inline-block;
+      margin-top: 6px;
+      text-decoration: none;
+    }
+    .post .readmore:hover {
+      background: #2f2b2b;
+      color: #fff;
+    }
+    .promo-bar {
+      margin: 18px 0 24px 0;
+      background: linear-gradient(90deg, #f49320, #dea098 70%, #f49320);
+      color: #fff;
+      text-align: center;
+      padding: 16px 6px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      letter-spacing: 0.5px;
+      position: relative;
+    }
+    .promo-bar .register {
+      background: #f49320;
+      color: #fff;
+      font-weight: 700;
+      border: none;
+      border-radius: 20px;
+      padding: 7px 24px;
+      margin-left: 14px;
+      cursor: pointer;
+      font-size:1rem;
+      box-shadow:0 1px 4px #0002;
+    }
+    .sidebar .searchbox {
+      display: flex;
+      margin-bottom: 28px;
+      gap: 4px;
+    }
+    .sidebar .searchbox input[type="text"] {
+      flex: 1;
+      padding: 7px;
+      border: 1px solid #9aa4a3;
+      border-radius: 5px 0 0 5px;
+      font-size: 1rem;
+      outline: none;
+    }
+    .sidebar .searchbox button {
+      background: #a72921;
+      color: #fff;
+      border: none;
+      padding: 7px 18px;
+      border-radius: 0 5px 5px 0;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .sidebar img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    .sidebar .danhmuc {
+      margin-bottom: 24px;
+    }
+    .sidebar .danhmuc h4 {
+      font-size: 1.06rem;
+      font-weight: 700;
+      color: #a72921;
+      margin-bottom: 8px;
+    }
+    .sidebar .danhmuc ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .sidebar .danhmuc li {
+      margin-bottom: 8px;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .sidebar .badge {
+      background: #a72921;
+      color: #fff;
+      border-radius: 50%;
+      padding: 2px 9px;
+      font-size: 0.93rem;
+      margin-left: 3px;
+      font-weight: 700;
+    }
+    .sidebar .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 14px;
+    }
+    .sidebar .tag {
+      background: #c8d2d1;
+      color: #2f2b2b;
+      border-radius: 16px;
+      padding: 6px 13px;
+      font-size: 0.98rem;
+    }
+    .pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 13px;
+      margin: 30px 0 8px 0;
+    }
+    .pagination .active {
+      background: #a72921;
+      color: #fff;
+      border-radius: 50%;
+      width: 30px; height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+    .pagination a, .pagination span {
+      color: #2f2b2b;
+      text-decoration: none;
+      font-size: 1.1rem;
+      padding: 6px 10px;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: background 0.13s;
+    }
+    .pagination a:hover {
+      background: #fbfbfa;
+      border: 1px solid #a72921;
+      color: #a72921;
+    }
+    footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0 12px 0;
+      font-size: 1rem;
+      margin-top: 24px;
+      letter-spacing: 0.5px;
+    }
+    @media (max-width: 900px) {
+      .container { flex-direction: column; gap: 0;}
+      .sidebar { margin-top: 0;}
+    }
+  </style>
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar">
+  <ul>
+    <li><a href="#">TÀI LIỆU ĐẠI HỌC</a></li>
+    <li><a href="#">TÀI LIỆU NGOẠI NGỮ</a></li>
+    <li><a href="#">TÀI LIỆU CHUYÊN NGÀNH</a></li>
+    <li><a href="#">KHÓA HỌC</a></li>
+  </ul>
+  <div>
+    <input type="text" placeholder="Tìm kiếm tài liệu..." disabled />
+  </div>
+</nav>
+<!-- Hero -->
+<div class="hero">
+  <h1>Chào Bạn 👋, bạn muốn tìm gì?</h1>
+  <div class="tags">
+    <span># TÀI LIỆU BÁCH KHOA</span>
+    <span># KHÓA HỌC</span>
+    <span># PHẦN MỀM</span>
+    <span># TÀI LIỆU NEU</span>
+    <span># IELTS</span>
+    <span># TOEIC</span>
+  </div>
+</div>
+<!-- Main content -->
+<div class="container">
+  <div class="main">
+    <div class="post">
+      <div class="section">Viện Kinh tế và Quản lý</div>
+      <h2>Tài liệu môn Đạo đức kinh doanh</h2>
+      <span class="date">13/11/2024</span>
+      <a href="tai-lieu-mon-dao-duc-kinh-doanh.html" class="readmore" target="_blank">Read more</a>
+    </div>
+    <div class="promo-bar">
+      KHÓA HỌC ĐẠI CƯƠNG GIẢI TÍCH - ĐẠI SỐ - VẬT LÝ HUST
+      <button class="register">ĐĂNG KÝ NGAY</button>
+    </div>
+    <div class="post">
+      <div class="section">Viện Kinh tế và Quản lý</div>
+      <h2>Tài liệu EM3310 – Mô phỏng hoạt động kinh doanh</h2>
+      <span class="date">13/11/2024</span>
+      <a href="#" class="readmore">Read more</a>
+    </div>
+    <div class="post">
+      <div class="section">Viện Kinh tế và Quản lý</div>
+      <h2>Tài liệu EM3432 – Quản trị chuỗi cung ứng</h2>
+      <span class="date">13/11/2024</span>
+      <a href="#" class="readmore">Read more</a>
+    </div>
+    <div class="post">
+      <div class="section">Viện Kinh tế và Quản lý</div>
+      <h2>Tài liệu EM4218 – Hệ thống thông tin quản lý</h2>
+      <span class="date">13/11/2024</span>
+      <a href="#" class="readmore">Read more</a>
+    </div>
+    <div class="post">
+      <div class="section">Viện Kinh tế và Quản lý</div>
+      <h2>Tài liệu môn Lý thuyết giá</h2>
+      <span class="date">13/11/2024</span>
+      <a href="#" class="readmore">Read more</a>
+    </div>
+    <div class="post">
+      <div class="section">Viện Kinh tế và Quản lý</div>
+      <h2>MI3600 – Phân tích dữ liệu và tri thức kinh doanh (giống MI4214)</h2>
+      <span class="date">13/11/2024</span>
+      <a href="#" class="readmore">Read more</a>
+    </div>
+    <div class="post">
+      <div class="section">Viện Kinh tế và Quản lý</div>
+      <h2>Tài liệu Phân tích và dự báo nhu cầu năng lượng</h2>
+      <span class="date">13/11/2024</span>
+      <a href="#" class="readmore">Read more</a>
+    </div>
+    <div class="post">
+      <div class="section">Viện Kinh tế và Quản lý</div>
+      <h2>Tài liệu Phân tích và Quản lý dự án năng lượng</h2>
+      <span class="date">13/11/2024</span>
+      <a href="#" class="readmore">Read more</a>
+    </div>
+    <div class="post">
+      <div class="section">Viện Kinh tế và Quản lý</div>
+      <h2>Tài liệu môn Quản lý sử dụng năng lượng</h2>
+      <span class="date">13/11/2024</span>
+      <a href="#" class="readmore">Read more</a>
+    </div>
+    <div class="post" style="display: flex; align-items: center; gap: 16px;">
+      <img src="https://ext.same-assets.com/2120019740/2591328774.webp" alt="Thực hành SQL t A-Z" width="110" style="border-radius:7px;">
+      <div>
+        <div class="section" style="color:#f49320;">Khóa học</div>
+        <h2>Khóa học thực hành SQL từ A tới Z để trở thành Data Analyst</h2>
+        <span class="date">29/10/2024</span>
+        <a href="#" class="readmore">Read More</a>
+      </div>
+    </div>
+    <div class="pagination">
+      <span class="active">1</span>
+      <a href="#">2</a>
+      <span>...</span>
+      <a href="#">56</a>
+      <a href="#">Next</a>
+    </div>
+  </div>
+  <div class="sidebar">
+    <form class="searchbox" autocomplete="off">
+      <input type="text" placeholder="Tìm kiếm tài liệu">
+      <button type="submit">TÌM KIẾM</button>
+    </form>
+    <img src="https://ext.same-assets.com/2120019740/1695540852.webp" alt="Course promo">
+    <div class="danhmuc">
+      <h4>Danh mục</h4>
+      <ul>
+        <li>Blog – Hướng dẫn <span class="badge">10</span></li>
+        <li>Blogging <span class="badge">8</span></li>
+        <li>Điểm rèn luyện <span class="badge">1</span></li>
+        <li>IELTS <span class="badge">1</span></li>
+        <li>Khoa công nghệ dệt may <span class="badge">7</span></li>
+        <li>Khoa công nghệ hóa học <span class="badge">21</span></li>
+        <li>Khoa học <span class="badge">109</span></li>
+        <li>SEO <span class="badge">19</span></li>
+        <li>Tài liệu Bách Khoa <span class="badge">28</span></li>
+        <li>Tài liệu NEU <span class="badge">8</span></li>
+        <li>TOEIC <span class="badge">11</span></li>
+        <li>Trường CNTT & TT <span class="badge">79</span></li>
+        <li>Viện Kinh tế và quản lý <span class="badge">47</span></li>
+        <li>Viện sinh phẩm <span class="badge">62</span></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Tags</h4>
+      <div class="tags">
+        <span class="tag">app</span>
+        <span class="tag">blog</span>
+        <span class="tag">seo</span>
+        <span class="tag">trường CNTT</span>
+        <span class="tag">data analyst</span>
+        <span class="tag">marketing</span>
+        <span class="tag">sql</span>
+        <span class="tag">giải tích</span>
+      </div>
+    </div>
+  </div>
+</div>
+<footer>
+  © 2024 Tailieuhust - By Hauvanvo
+</footer>
+<script>
+  // Lọc bài viết theo tiêu đề khi tìm kiếm
+  document.querySelector('.searchbox').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const keyword = this.querySelector('input[type="text"]').value.trim().toLowerCase();
+    const posts = document.querySelectorAll('.main .post');
+    let found = 0;
+    posts.forEach(post => {
+      const title = post.querySelector('h2') ? post.querySelector('h2').textContent.toLowerCase() : '';
+      if (title.includes(keyword) || keyword === "") {
+        post.style.display = '';
+        found++;
+      } else {
+        post.style.display = 'none';
+      }
+    });
+    if (document.querySelector('.pagination')) {
+      document.querySelector('.pagination').style.display = keyword === "" ? "" : "none";
+    }
+    if (document.getElementById('no-result-msg')) {
+      document.getElementById('no-result-msg').remove();
+    }
+    if (found === 0) {
+      const msg = document.createElement('div');
+      msg.id = 'no-result-msg';
+      msg.textContent = "Không tìm thấy kết quả phù hợp.";
+      msg.style.cssText = "color:#a72921;text-align:center;font-weight:600;margin:40px 0 10px 0;font-size:1.15rem;";
+      document.querySelector('.main').appendChild(msg);
+    }
+    if (keyword) {
+      document.querySelector('.main').scrollIntoView({behavior:"smooth"});
+    }
+  });
+  document.querySelector('.searchbox input[type="text"]').addEventListener('input', function() {
+    if (this.value.trim() === "") {
+      const posts = document.querySelectorAll('.main .post');
+      posts.forEach(p => p.style.display = '');
+      if (document.querySelector('.pagination')) {
+        document.querySelector('.pagination').style.display = "";
+      }
+      if (document.getElementById('no-result-msg')) {
+        document.getElementById('no-result-msg').remove();
+      }
+    }
+  });
+</script>
+</body>
+</html>
