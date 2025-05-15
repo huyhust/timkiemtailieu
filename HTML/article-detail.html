@@ -81,12 +81,12 @@
     <!-- Phần 1 -->
     <div class="mb-6">
       <h4 class="text-lg font-semibold mb-2">1. Bài giảng môn học</h4>
-      <button class="bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600">TẢI BÀI GIẢNG</button>
+      <button onclick="window.location.href='https://drive.google.com/drive/folders/1-HzBNJRIA0a_yZWs0NAJUVH_2pJl6OpE'" class="bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600">TẢI BÀI GIẢNG</button>
     </div>
     <!-- Phần 2 -->
     <div class="mb-6">
       <h4 class="text-lg font-semibold mb-2">2. Giáo trình và Tài liệu tham khảo</h4>
-      <button class="bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600">TẢI TÀI LIỆU</button>
+      <button onclick="window.location.href='https://drive.google.com/drive/folders/1-Lc0yaubGv9f7dBq3kb7990u6yrY33Cw'" class="bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600">TẢI TÀI LIỆU</button>
     </div>
     <!-- Liên kết tải xuống -->
     <div class="space-y-4">
@@ -187,5 +187,83 @@
     </div>
   </aside>
 </div>
+
+<div class="max-w-2xl mx-auto mt-8 p-6 bg-white rounded-lg shadow-md bg-gray-100">
+  <div id="comments">
+    <!-- Bình luận sẽ được thêm động bằng JavaScript -->
+  </div>
+  <!-- Form nhập bình luận -->
+  <form id="commentForm" class="mb-6">
+    <div class="mb-4">
+      <label for="author" class="block text-gray-700 font-semibold mb-2">Tên:</label>
+      <input type="text" id="author" name="author" required
+             class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900 bg-white"
+             placeholder="Nhập tên của bạn">
+    </div>
+    <div class="mb-4">
+      <label for="text" class="block text-gray-700 font-semibold mb-2">Bình luận:</label>
+      <textarea id="text" name="text" required
+                class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900 bg-white"
+                rows="4" placeholder="Nhập bình luận của bạn"></textarea>
+    </div>
+    <button type="submit"
+            class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">
+      Gửi bình luận
+    </button>
+  </form>
+</div>
+
+<script>
+  // Dữ liệu bình luận mẫu (ban đầu)
+  let commentsData = [
+    { author: "Nguyễn Văn An", text: "Bài viết rất hay, cảm ơn bạn!" },
+    { author: "Trần Thị Thu", text: "Tôi đồng ý với quan điểm này." },
+    { author: "Lê Văn Luyện", text: "Có thể bổ sung thêm thông tin về chủ đề này không?" }
+  ];
+
+  // Hàm hiển thị bình luận
+  function displayComments(comments) {
+    const commentsContainer = document.getElementById("comments");
+    commentsContainer.innerHTML = ""; // Xóa nội dung cũ
+
+    comments.forEach(comment => {
+      const commentElement = document.createElement("div");
+      commentElement.className = "p-4 border-b border-gray-200 last:border-b-0";
+      commentElement.innerHTML = `
+                    <p class="font-semibold text-gray-800">${comment.author}</p>
+                    <p class="text-gray-600 mt-1">${comment.text}</p>
+                `;
+      commentsContainer.appendChild(commentElement);
+    });
+  }
+
+  // Xử lý sự kiện gửi form
+  const commentForm = document.getElementById("commentForm");
+  commentForm.addEventListener("submit", function (event) {
+    event.preventDefault(); // Ngăn chặn reload trang
+
+    const authorInput = document.getElementById("author");
+    const textInput = document.getElementById("text");
+
+    // Lấy giá trị từ form
+    const newComment = {
+      author: authorInput.value.trim(),
+      text: textInput.value.trim()
+    };
+
+    // Kiểm tra dữ liệu hợp lệ
+    if (newComment.author && newComment.text) {
+      // Thêm bình luận mới vào mảng
+      commentsData.unshift(newComment); // Thêm vào đầu mảng
+      displayComments(commentsData); // Cập nhật giao diện
+      commentForm.reset(); // Xóa form
+    } else {
+      alert("Vui lòng nhập đầy đủ tên và nội dung bình luận.");
+    }
+  });
+
+  // Hiển thị bình luận ban đầu
+  displayComments(commentsData);
+</script>
 </body>
 </html>
