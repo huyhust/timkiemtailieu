@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tài Liệu HUST</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Fuse.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.min.js"></script>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+<!-- Phần đầu trang -->
+<header class="bg-gray-800 py-4">
+  <div class="container mx-auto flex justify-between items-center px-4">
+    <!-- Logo -->
+    <div class="flex items-center space-x-2">
+      <img src="Logo_Đại_học_Bách_Khoa_Hà_Nội.svg.png" alt="Logo" class="h-10 w-10 rounded-full">
+      <h1 class="text-red-500 text-xl font-bold">TÀI LIỆU HUST</h1>
+    </div>
+    <!-- Thanh điều hướng -->
+    <nav class="space-x-4">
+      <a href="#" class="text-gray-300 hover:text-white">TÀI LIỆU ĐẠI HỌC</a>
+      <a href="#" class="text-gray-300 hover:text-white">TÀI LIỆU NGÔẠI NGỮ</a>
+      <a href="#" class="text-gray-300 hover:text-white">TÀI LIỆU CHUYÊN NGÀNH</a>
+      <a href="#" class="text-gray-300 hover:text-white">KHÓA HỌC</a>
+    </nav>
+    <!-- Biểu tượng tìm kiếm -->
+    <div>
+      <svg class="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<!-- Nội dung chính -->
+<div class="container mx-auto px-4 py-8 flex">
+  <!-- Phần danh sách bài viết -->
+  <main class="w-3/4 pr-8">
+    <!-- Lời chào -->
+    <h2 class="text-2xl font-bold mb-6">Chào Bạn 👋, bạn muốn tìm gì?</h2>
+    <!-- Các thẻ tìm kiếm -->
+    <div class="flex space-x-4 mb-6">
+      <a href="#" class="bg-red-600 text-white px-4 py-2 rounded-full hover:bg-red-700"># TÀI LIỆU BÁCH KHOA</a>
+      <a href="#" class="bg-red-600 text-white px-4 py-2 rounded-full hover:bg-red-700"># KHÓA HỌC</a>
+      <a href="#" class="bg-red-600 text-white px-4 py-2 rounded-full hover:bg-red-700"># PHẦN MỀM</a>
+      <a href="#" class="bg-red-600 text-white px-4 py-2 rounded-full hover:bg-red-700"># TÀI LIỆU NEU</a>
+      <a href="#" class="bg-red-600 text-white px-4 py-2 rounded-full hover:bg-red-700"># IELTS</a>
+      <a href="#" class="bg-red-600 text-white px-4 py-2 rounded-full hover:bg-red-700"># TOEIC</a>
+    </div>
+    <!-- Khu vực hiển thị bài viết -->
+    <div id="articles">
+      <article class="mb-6">
+        <h3 class="text-red-500 uppercase text-sm">Viện Kinh Tế và Quản Lý</h3>
+        <h4 class="text-lg font-semibold">Tài liệu môn Đạo đức kinh doanh</h4>
+        <p class="text-gray-400 text-sm">13/11/2024</p>
+        <a href="article-detail.html" class="border border-gray-500 text-gray-300 px-4 py-2 mt-2 inline-block hover:bg-gray-700">READ MORE</a>
+      </article>
+      <article class="mb-6">
+        <h3 class="text-red-500 uppercase text-sm">Viện Kinh Tế và Quản Lý</h3>
+        <h4 class="text-lg font-semibold">Tài liệu EM3310 – Mở phòng hoạt động kinh doanh</h4>
+        <p class="text-gray-400 text-sm">13/11/2024</p>
+        <a href="article-detail.html" class="border border-gray-500 text-gray-300 px-4 py-2 mt-2 inline-block hover:bg-gray-700">READ MORE</a>
+      </article>
+      <article class="mb-6">
+        <h3 class="text-red-500 uppercase text-sm">Viện Kinh Tế và Quản Lý</h3>
+        <h4 class="text-lg font-semibold">Tài liệu EM3432 – Quản trị chuỗi cung ứng</h4>
+        <p class="text-gray-400 text-sm">13/11/2024</p>
+        <a href="article-detail.html" class="border border-gray-500 text-gray-300 px-4 py-2 mt-2 inline-block hover:bg-gray-700">READ MORE</a>
+      </article>
+      <article class="mb-6">
+        <h3 class="text-red-500 uppercase text-sm">Trường Điện - Điện tử</h3>
+        <h4 class="text-lg font-semibold">Tài liệu môn Xử lý tín hiệu HUST</h4>
+        <p class="text-gray-400 text-sm">13/11/2024</p>
+        <a href="article-detail.html" class="border border-gray-500 text-gray-300 px-4 py-2 mt-2 inline-block hover:bg-gray-700">READ MORE</a>
+      </article>
+      <article class="mb-6">
+        <h3 class="text-red-500 uppercase text-sm">Trường Điện - Điện tử</h3>
+        <h4 class="text-lg font-semibold">Tài liệu tư duy công nghệ và thiết kế mỹ thuật</h4>
+        <p class="text-gray-400 text-sm">13/11/2024</p>
+        <a href="article-detail.html" class="border border-gray-500 text-gray-300 px-4 py-2 mt-2 inline-block hover:bg-gray-700">READ MORE</a>
+      </article>
+      <article class="mb-6">
+        <h3 class="text-red-500 uppercase text-sm">Trường CNTT & TT</h3>
+        <h4 class="text-lg font-semibold">Tài liệu môn truyền thông đa phương tiện HUST</h4>
+        <p class="text-gray-400 text-sm">13/11/2024</p>
+        <a href="article-detail.html" class="border border-gray-500 text-gray-300 px-4 py-2 mt-2 inline-block hover:bg-gray-700">READ MORE</a>
+      </article>
+      <article class="mb-6">
+        <h3 class="text-red-500 uppercase text-sm">Trường CNTT & TT</h3>
+        <h4 class="text-lg font-semibold">Tài liệu môn tối ưu lập kế hoạch HUST</h4>
+        <p class="text-gray-400 text-sm">13/11/2024</p>
+        <a href="article-detail.html" class="border border-gray-500 text-gray-300 px-4 py-2 mt-2 inline-block hover:bg-gray-700">READ MORE</a>
+      </article>
+      <article class="mb-6">
+        <h3 class="text-red-500 uppercase text-sm">Trường CNTT & TT</h3>
+        <h4 class="text-lg font-semibold">Tài liệu môn Thuật toán ứng dụng HUST</h4>
+        <p class="text-gray-400 text-sm">13/11/2024</p>
+        <a href="article-detail.html" class="border border-gray-500 text-gray-300 px-4 py-2 mt-2 inline-block hover:bg-gray-700">READ MORE</a>
+      </article>
+    </div>
+  </main>
+
+  <!-- Thanh bên -->
+  <aside class="w-1/4">
+    <!-- Thanh tìm kiếm -->
+    <div class="mb-6">
+      <h3 class="text-lg font-semibold mb-2">Tìm kiếm</h3>
+      <input type="text" id="searchInput" placeholder="Tìm kiếm tài liệu" class="w-full bg-gray-800 text-white p-2 rounded">
+      <button id="searchButton" class="bg-red-600 text-white px-4 py-2 mt-2 rounded hover:bg-red-700">TÌM KIẾM</button>
+    </div>
+    <!-- Quảng cáo -->
+    <div class="bg-white text-black p-4 rounded mb-6">
+      <h3 class="text-lg font-semibold text-center">Khóa Học Bái Cường</h3>
+      <h4 class="text-xl font-bold text-center text-orange-500">LÌ XÌ NĂM MỚI</h4>
+      <p class="text-center text-sm">Bốc đại có combo mới</p>
+      <div class="mt-4">
+        <p class="text-sm">Gói học</p>
+        <ul class="text-sm">
+          <li>Combo 2 môn: 430.000đ</li>
+          <li>Combo 3 môn: 570.000đ</li>
+          <li>Combo 4 môn: 710.000đ</li>
+          <li>Học đại diện: 149.000đ</li>
+        </ul>
+      </div>
+      <p class="text-center text-sm mt-4">Tăng Điểm</p>
+    </div>
+    <!-- Danh mục -->
+    <div class="p-4">
+      <h3 class="text-lg font-semibold mb-4">Danh Mục</h3>
+      <ul class="space-y-2">
+        <li class="flex justify-between">
+          <a href="#" class="text-gray-300 hover:text-white">Blog – Hướng dẫn</a>
+          <span class="bg-red-600 text-white text-xs font-bold rounded-full h-6 w-6 flex items-center justify-center">10</span>
+        </li>
+        <li class="flex justify-between">
+          <a href="#" class="text-gray-300 hover:text-white">Blogging</a>
+          <span class="bg-red-600 text-white text-xs font-bold rounded-full h-6 w-6 flex items-center justify-center">1</span>
+        </li>
+        <li class="flex justify-between">
+          <a href="#" class="text-gray-300 hover:text-white">Điểm rèn luyện</a>
+          <span class="bg-red-600 text-white text-xs font-bold rounded-full h-6 w-6 flex items-center justify-center">1</span>
+        </li>
+        <li class="flex justify-between">
+          <a href="#" class="text-gray-300 hover:text-white">IELTS</a>
+          <span class="bg-red-600 text-white text-xs font-bold rounded-full h-6 w-6 flex items-center justify-center">7</span>
+        </li>
+        <li class="flex justify-between">
+          <a href="#" class="text-gray-300 hover:text-white">Khóa công nghệ để may</a>
+          <span class="bg-red-600 text-white text-xs font-bold rounded-full h-6 w-6 flex items-center justify-center">21</span>
+        </li>
+        <li class="flex justify-between">
+          <a href="#" class="text-gray-300 hover:text-white">Khóa công nghệ học</a>
+          <span class="bg-red-600 text-white text-xs font-bold rounded-full h-6 w-6 flex items-center justify-center">106</span>
+        </li>
+        <li class="flex justify-between">
+          <a href="#" class="text-gray-300 hover:text-white">Khóa học độc thế chất</a>
+          <span class="bg-red-600 text-white text-xs font-bold rounded-full h-6 w-6 flex items-center justify-center">10</span>
+        </li>
+        <li class="flex justify-between">
+          <a href="#" class="text-gray-300 hover:text-white">Khóa học và công nghệ việt kiều</a>
+          <span class="bg-red-600 text-white text-xs font-bold rounded-full h-6 w-6 flex items-center justify-center">6</span>
+        </li>
+        <li class="flex justify-between">
+          <a href="#" class="text-gray-300 hover:text-white">Khóa lý luận chính trị</a>
+          <span class="bg-red-600 text-white text-xs font-bold rounded-full h-6 w-6 flex items-center justify-center">3</span>
+        </li>
+        <li class="flex justify-between">
+          <a href="#" class="text-gray-300 hover:text-white">Khóa ngoại phương</a>
+          <span class="bg-red-600 text-white text-xs font-bold rounded-full h-6 w-6 flex items-center justify-center">19</span>
+        </li>
+        <li class="flex justify-between">
+          <a href="#" class="text-gray-300 hover:text-white">NGOẠI NGỮ</a>
+          <span class="bg-red-600 text-white text-xs font-bold rounded-full h-6 w-6 flex items-center justify-center">28</span>
+        </li>
+        <li class="flex justify-between">
+          <a href="#" class="text-gray-300 hover:text-white">SEO</a>
+          <span class="bg-red-600 text-white text-xs font-bold rounded-full h-6 w-6 flex items-center justify-center">8</span>
+        </li>
+        <li class="flex justify-between">
+          <a href="#" class="text-gray-300 hover:text-white">Tài liệu Bách Khoa</a>
+          <span class="bg-red-600 text-white text-xs font-bold rounded-full h-6 w-6 flex items-center justify-center">3</span>
+        </li>
+        <li class="flex justify-between">
+          <a href="#" class="text-gray-300 hover:text-white">Tài liệu NEU</a>
+          <span class="bg-red-600 text-white text-xs font-bold rounded-full h-6 w-6 flex items-center justify-center">3</span>
+        </li>
+        <li class="flex justify-between">
+          <a href="#" class="text-gray-300 hover:text-white">Tài liệu THPT</a>
+          <span class="bg-red-600 text-white text-xs font-bold rounded-full h-6 w-6 flex items-center justify-center">3</span>
+        </li>
+        <li class="flex justify-between">
+          <a href="#" class="text-gray-300 hover:text-white">Tài liệu tiếng Anh</a>
+          <span class="bg-red-600 text-white text-xs font-bold rounded-full h-6 w-6 flex items-center justify-center">1</span>
+        </li>
+        <li class="flex justify-between">
+          <a href="#" class="text-gray-300 hover:text-white">Tiếng Hàn</a>
+          <span class="bg-red-600 text-white text-xs font-bold rounded-full h-6 w-6 flex items-center justify-center">1</span>
+        </li>
+      </ul>
+    </div>
+  </aside>
+</div>
+
+<!-- JavaScript để xử lý tìm kiếm -->
+<script>
+  // Lấy dữ liệu bài viết từ phần <main>
+  const articleElements = document.querySelectorAll('#articles article');
+  const articles = Array.from(articleElements).map((article, index) => ({
+    id: index,
+    title: article.querySelector('h4').textContent,
+    element: article // Lưu tham chiếu đến phần tử DOM
+  }));
+
+  // Cấu hình Fuse.js
+  const options = {
+    includeScore: true,
+    keys: ['title'], // Tìm kiếm theo tiêu đề
+    threshold: 0.4 // Độ nhạy của tìm kiếm gần đúng
+  };
+
+  const fuse = new Fuse(articles, options);
+
+  // Lấy các phần tử DOM
+  const searchInput = document.getElementById('searchInput');
+  const searchButton = document.getElementById('searchButton');
+
+  // Hàm hiển thị bài viết dựa trên kết quả tìm kiếm
+  function filterArticles(query) {
+    if (query === '') {
+      // Nếu không có từ khóa, hiển thị tất cả bài viết
+      articleElements.forEach(article => {
+        article.style.display = 'block';
+      });
+      return;
+    }
+
+    // Tìm kiếm với Fuse.js
+    const results = fuse.search(query);
+
+    // Ẩn tất cả bài viết trước
+    articleElements.forEach(article => {
+      article.style.display = 'none';
+    });
+
+    // Hiển thị các bài viết khớp với tìm kiếm
+    results.forEach(result => {
+      result.item.element.style.display = 'block';
+    });
+
+    // Nếu không có kết quả, hiển thị thông báo
+    if (results.length === 0) {
+      const noResults = document.createElement('p');
+      noResults.className = 'text-gray-400';
+      noResults.textContent = 'Không tìm thấy kết quả.';
+      document.getElementById('articles').appendChild(noResults);
+    }
+  }
+
+  // Sự kiện khi nhấn nút tìm kiếm
+  searchButton.addEventListener('click', () => {
+    const query = searchInput.value.trim();
+    filterArticles(query);
+  });
+
+  // Sự kiện tìm kiếm động khi người dùng nhập
+  searchInput.addEventListener('input', () => {
+    const query = searchInput.value.trim();
+    filterArticles(query);
+  });
+</script>
+</body>
+</html>
