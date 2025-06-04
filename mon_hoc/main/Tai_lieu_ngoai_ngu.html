@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tài Liệu HUST</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Fuse.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.min.js"></script>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+<!-- Phần đầu trang -->
+<header class="bg-gray-800 py-4">
+  <div class="container mx-auto flex justify-between items-center px-4">
+    <!-- Logo -->
+    <div class="flex items-center space-x-2">
+      <img src="Logo_Đại_học_Bách_Khoa_Hà_Nội.svg.png" alt="Logo" class="h-10 w-10 rounded-full">
+      <a href="index.html" class="text-red-500 text-xl font-bold">ITSS 2</a>
+    </div>
+    <!-- Thanh điều hướng -->
+    <nav class="space-x-4">
+      <a href="Tai_lieu_dai_hoc.html" class="text-gray-300 hover:text-white">TÀI LIỆU ĐẠI HỌC</a>
+      <a href="Tai_lieu_ngoai_ngu.html" class="text-gray-300 hover:text-white">TÀI LIỆU NGOẠI NGỮ</a>
+      <a href="Tai_lieu_chuyen_nganh.html" class="text-gray-300 hover:text-white">TÀI LIỆU CHUYÊN NGÀNH</a>
+      <a href="Khoa_hoc.html" class="text-gray-300 hover:text-white">KHÓA HỌC</a>
+    </nav>
+    <!-- Biểu tượng tìm kiếm -->
+    <div>
+      <svg class="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<!-- Nội dung chính -->
+<div class="container mx-auto px-4 py-8 flex">
+  <!-- Phần danh sách bài viết -->
+  <main class="w-3/4 pr-8">
+    <!-- Lời chào -->
+    <h2 class="text-2xl font-bold mb-6">TÀI LIỆU NGOẠI NGỮ</h2>
+    <!-- Các thẻ tìm kiếm -->
+    <div class="flex space-x-4 mb-6">
+      <a href="Tai_lieu_dai_hoc.html" class="bg-red-600 text-white px-4 py-2 rounded-full hover:bg-red-700"># TÀI LIỆU BÁCH KHOA</a>
+      <a href="Khoa_hoc.html" class="bg-red-600 text-white px-4 py-2 rounded-full hover:bg-red-700"># KHÓA HỌC</a>
+      <a href="Tai_lieu_chuyen_nganh.html" class="bg-red-600 text-white px-4 py-2 rounded-full hover:bg-red-700"># PHẦN MỀM</a>
+      <a href="Tai_lieu_ngoai_ngu.html" class="bg-red-600 text-white px-4 py-2 rounded-full hover:bg-red-700"># IELTS</a>
+      <a href="Tai_lieu_ngoai_ngu.html" class="bg-red-600 text-white px-4 py-2 rounded-full hover:bg-red-700"># TOEIC</a>
+    </div>
+    <!-- Khu vực hiển thị bài viết -->
+    <div id="articles">
+      <article class="mb-6">
+        <h3 class="text-red-500 uppercase text-sm">TOEIC</h3>
+        <h4 class="text-lg font-semibold">Khóa học Chiến lược học Toeic từ A đến Z</h4>
+        <p class="text-gray-400 text-sm">13/11/2024</p>
+        <div class="flex items-center mt-2">
+          <span class="text-yellow-400 text-lg">★</span>
+          <span class="text-yellow-400 text-lg">★</span>
+          <span class="text-yellow-400 text-lg">★</span>
+          <span class="text-yellow-400 text-lg">★</span>
+          <span class="relative text-lg">
+      <span class="absolute left-0 text-yellow-400" style="width: 50%; overflow: hidden;">★</span>
+      <span class="text-gray-400">★</span>
+    </span>
+        </div>
+        <a href="mon_hoc/main/dao_duc_kinh_doanh.html" class="border border-gray-500 text-gray-300 px-4 py-2 mt-2 inline-block hover:bg-gray-700">READ MORE</a>
+      </article>
+      <article class="mb-6">
+        <h3 class="text-red-500 uppercase text-sm">Khóa học</h3>
+        <h4 class="text-lg font-semibold">Khóa học tiếng nhật cho người mới bắt đầu chương trình Hajime 2</h4>
+        <p class="text-gray-400 text-sm">13/11/2024</p>
+        <div class="flex items-center mt-2">
+          <span class="text-yellow-400 text-lg">★</span>
+          <span class="text-yellow-400 text-lg">★</span>
+          <span class="text-yellow-400 text-lg">★</span>
+          <span class="text-yellow-400 text-lg">★</span>
+          <span class="relative text-lg">
+      <span class="absolute left-0 text-yellow-400" style="width: 60%; overflow: hidden;">★</span>
+      <span class="text-gray-400">★</span>
+    </span>
+        </div>
+        <a href="mon_hoc/main/EM3310.html" class="border border-gray-500 text-gray-300 px-4 py-2 mt-2 inline-block hover:bg-gray-700">READ MORE</a>
+      </article>
+      <article class="mb-6">
+        <h3 class="text-red-500 uppercase text-sm">Khóa học</h3>
+        <h4 class="text-lg font-semibold">Khóa học tiếng nhật cho người mới bắt đầu chương trình Hajime 1</h4>
+        <p class="text-gray-400 text-sm">13/11/2024</p>
+        <div class="flex items-center mt-2">
+          <span class="text-yellow-400 text-lg">★</span>
+          <span class="text-yellow-400 text-lg">★</span>
+          <span class="text-yellow-400 text-lg">★</span>
+          <span class="text-yellow-400 text-lg">★</span>
+          <span class="relative text-lg">
+      <span class="absolute left-0 text-yellow-400" style="width: 60%; overflow: hidden;">★</span>
+      <span class="text-gray-400">★</span>
+    </span>
+        </div>
+        <a href="mon_hoc/main/dao_duc_kinh_doanh.html" class="border border-gray-500 text-gray-300 px-4 py-2 mt-2 inline-block hover:bg-gray-700">READ MORE</a>
+      </article>
+      <article class="mb-6">
+        <h3 class="text-red-500 uppercase text-sm">Khóa học</h3>
+        <h4 class="text-lg font-semibold">Khóa học Tiếng nhật cho người mới bắt đầu</h4>
+        <p class="text-gray-400 text-sm">13/11/2024</p>
+        <div class="flex items-center mt-2">
+          <span class="text-yellow-400 text-lg">★</span>
+          <span class="text-yellow-400 text-lg">★</span>
+          <span class="text-yellow-400 text-lg">★</span>
+          <span class="text-yellow-400 text-lg">★</span>
+          <span class="relative text-lg">
+      <span class="absolute left-0 text-yellow-400" style="width: 70%; overflow: hidden;">★</span>
+      <span class="text-gray-400">★</span>
+    </span>
+        </div>
+        <a href="mon_hoc/main/dao_duc_kinh_doanh.html" class="border border-gray-500 text-gray-300 px-4 py-2 mt-2 inline-block hover:bg-gray-700">READ MORE</a>
+      </article>
+      <article class="mb-6">
+        <h3 class="text-red-500 uppercase text-sm">Khóa học</h3>
+        <h4 class="text-lg font-semibold">Khóa học Luyện thi tiếng nhật N3 cấp tốc</h4>
+        <p class="text-gray-400 text-sm">13/11/2024</p>
+        <div class="flex items-center mt-2">
+          <span class="text-yellow-400 text-lg">★</span>
+          <span class="text-yellow-400 text-lg">★</span>
+          <span class="text-yellow-400 text-lg">★</span>
+          <span class="text-yellow-400 text-lg">★</span>
+          <span class="relative text-lg">
+      <span class="absolute left-0 text-yellow-400" style="width: 40%; overflow: hidden;">★</span>
+      <span class="text-gray-400">★</span>
+    </span>
+        </div>
+        <a href="mon_hoc/main/dao_duc_kinh_doanh.html" class="border border-gray-500 text-gray-300 px-4 py-2 mt-2 inline-block hover:bg-gray-700">READ MORE</a>
+      </article>
+      <article class="mb-6">
+        <h3 class="text-red-500 uppercase text-sm">Tiếng anh tổng hợp</h3>
+        <h4 class="text-lg font-semibold">Sách 15 phút học từ vựng − đọc hiểu tiếng Anh mỗi ngày</h4>
+        <p class="text-gray-400 text-sm">13/11/2024</p>
+        <div class="flex items-center mt-2">
+          <span class="text-yellow-400 text-lg">★</span>
+          <span class="text-yellow-400 text-lg">★</span>
+          <span class="text-yellow-400 text-lg">★</span>
+          <span class="text-yellow-400 text-lg">★</span>
+          <span class="relative text-lg">
+      <span class="absolute left-0 text-yellow-400" style="width: 50%; overflow: hidden;">★</span>
+      <span class="text-gray-400">★</span>
+    </span>
+        </div>
+        <a href="mon_hoc/main/dao_duc_kinh_doanh.html" class="border border-gray-500 text-gray-300 px-4 py-2 mt-2 inline-block hover:bg-gray-700">READ MORE</a>
+      </article>
+      <article class="mb-6">
+        <h3 class="text-red-500 uppercase text-sm">TOEIC</h3>
+        <h4 class="text-lg font-semibold">Full Đáp án ETS TOEIC 2022 LC+RC mới nhất (có sách)</h4>
+        <p class="text-gray-400 text-sm">13/11/2024</p>
+        <div class="flex items-center mt-2">
+          <span class="text-yellow-400 text-lg">★</span>
+          <span class="text-yellow-400 text-lg">★</span>
+          <span class="text-yellow-400 text-lg">★</span>
+          <span class="text-yellow-400 text-lg">★</span>
+          <span class="relative text-lg">
+      <span class="absolute left-0 text-yellow-400" style="width: 60%; overflow: hidden;">★</span>
+      <span class="text-gray-400">★</span>
+    </span>
+        </div>
+        <a href="mon_hoc/main/dao_duc_kinh_doanh.html" class="border border-gray-500 text-gray-300 px-4 py-2 mt-2 inline-block hover:bg-gray-700">READ MORE</a>
+      </article>
+      <article class="mb-6">
+        <h3 class="text-red-500 uppercase text-sm">IELTS</h3>
+        <h4 class="text-lg font-semibold">Boost your Vocabulary Cambridge IELTS 8 – 16</h4>
+        <p class="text-gray-400 text-sm">13/11/2024</p>
+        <div class="flex items-center mt-2">
+          <span class="text-yellow-400 text-lg">★</span>
+          <span class="text-yellow-400 text-lg">★</span>
+          <span class="text-yellow-400 text-lg">★</span>
+          <span class="text-yellow-400 text-lg">★</span>
+          <span class="relative text-lg">
+      <span class="absolute left-0 text-yellow-400" style="width: 40%; overflow: hidden;">★</span>
+      <span class="text-gray-400">★</span>
+    </span>
+        </div>
+        <a href="mon_hoc/main/dao_duc_kinh_doanh.html" class="border border-gray-500 text-gray-300 px-4 py-2 mt-2 inline-block hover:bg-gray-700">READ MORE</a>
+      </article>
+      <article class="mb-6">
+        <h3 class="text-red-500 uppercase text-sm">Tài liệu tiếng Anh</h3>
+        <h4 class="text-lg font-semibold">English Grammar in Use Intermediate 5th</h4>
+        <p class="text-gray-400 text-sm">13/11/2024</p>
+        <div class="flex items-center mt-2">
+        <span class="text-yellow-400 text-lg">★</span>
+        <span class="text-yellow-400 text-lg">★</span>
+        <span class="text-yellow-400 text-lg">★</span>
+        <span class="text-yellow-400 text-lg">★</span>
+        <span class="relative text-lg">
+      <span class="absolute left-0 text-yellow-400" style="width: 60%; overflow: hidden;">★</span>
+      <span class="text-gray-400">★</span>
+    </span>
+      </div>
+        <a href="mon_hoc/main/dao_duc_kinh_doanh.html" class="border border-gray-500 text-gray-300 px-4 py-2 mt-2 inline-block hover:bg-gray-700">READ MORE</a>
+      </article>
+    </div>
+  </main>
+
+  <!-- Thanh bên -->
+  <aside class="w-1/4">
+    <!-- Thanh tìm kiếm -->
+    <div class="mb-6">
+      <h3 class="text-lg font-semibold mb-2">Tìm kiếm</h3>
+      <input type="text" id="searchInput" placeholder="Tìm kiếm tài liệu" class="w-full bg-gray-800 text-white p-2 rounded">
+      <button id="searchButton" class="bg-red-600 text-white px-4 py-2 mt-2 rounded hover:bg-red-700">TÌM KIẾM</button>
+    </div>
+    <!-- Danh mục -->
+    <div class="p-4">
+      <h3 class="text-lg font-semibold mb-4">Danh Mục</h3>
+      <ul class="space-y-2">
+        <li class="flex justify-between">
+          <a href="Tai_lieu_ngoai_ngu.html" class="text-gray-300 hover:text-white">IELTS</a>
+          <span class="bg-red-600 text-white text-xs font-bold rounded-full h-6 w-6 flex items-center justify-center">7</span>
+        </li>
+        <li class="flex justify-between">
+          <a href="Tai_lieu_chuyen_nganh.html" class="text-gray-300 hover:text-white">Khóa công nghệ để may</a>
+          <span class="bg-red-600 text-white text-xs font-bold rounded-full h-6 w-6 flex items-center justify-center">21</span>
+        </li>
+        <li class="flex justify-between">
+          <a href="Tai_lieu_chuyen_nganh.html" class="text-gray-300 hover:text-white">Khóa công nghệ học</a>
+          <span class="bg-red-600 text-white text-xs font-bold rounded-full h-6 w-6 flex items-center justify-center">106</span>
+        </li>
+        <li class="flex justify-between">
+          <a href="Tai_lieu_chuyen_nganh.html" class="text-gray-300 hover:text-white">Khóa học độc thế chất</a>
+          <span class="bg-red-600 text-white text-xs font-bold rounded-full h-6 w-6 flex items-center justify-center">10</span>
+        </li>
+        <li class="flex justify-between">
+          <a href="Khoa_hoc.html" class="text-gray-300 hover:text-white">Khóa học và công nghệ việt kiều</a>
+          <span class="bg-red-600 text-white text-xs font-bold rounded-full h-6 w-6 flex items-center justify-center">6</span>
+        </li>
+        <li class="flex justify-between">
+          <a href="Khoa_hoc.html" class="text-gray-300 hover:text-white">Khóa lý luận chính trị</a>
+          <span class="bg-red-600 text-white text-xs font-bold rounded-full h-6 w-6 flex items-center justify-center">3</span>
+        </li>
+        <li class="flex justify-between">
+          <a href="Tai_lieu_dai_hoc.html" class="text-gray-300 hover:text-white">Khóa ngoại phương</a>
+          <span class="bg-red-600 text-white text-xs font-bold rounded-full h-6 w-6 flex items-center justify-center">19</span>
+        </li>
+        <li class="flex justify-between">
+          <a href="Tai_lieu_ngoai_ngu.html" class="text-gray-300 hover:text-white">NGOẠI NGỮ</a>
+          <span class="bg-red-600 text-white text-xs font-bold rounded-full h-6 w-6 flex items-center justify-center">28</span>
+        </li>
+        <li class="flex justify-between">
+          <a href="Tai_lieu_chuyen_nganh.html" class="text-gray-300 hover:text-white">Tài liệu Bách Khoa</a>
+          <span class="bg-red-600 text-white text-xs font-bold rounded-full h-6 w-6 flex items-center justify-center">3</span>
+        </li>
+        <li class="flex justify-between">
+          <a href="Khoa_hoc.html" class="text-gray-300 hover:text-white">Tài liệu THPT</a>
+          <span class="bg-red-600 text-white text-xs font-bold rounded-full h-6 w-6 flex items-center justify-center">3</span>
+        </li>
+        <li class="flex justify-between">
+          <a href="Tai_lieu_ngoai_ngu.html" class="text-gray-300 hover:text-white">Tài liệu tiếng Anh</a>
+          <span class="bg-red-600 text-white text-xs font-bold rounded-full h-6 w-6 flex items-center justify-center">1</span>
+        </li>
+        <li class="flex justify-between">
+          <a href="Tai_lieu_ngoai_ngu.html" class="text-gray-300 hover:text-white">Tiếng Hàn</a>
+          <span class="bg-red-600 text-white text-xs font-bold rounded-full h-6 w-6 flex items-center justify-center">1</span>
+        </li>
+      </ul>
+    </div>
+  </aside>
+</div>
+
+<!-- JavaScript để xử lý tìm kiếm -->
+<script>
+  // Lấy dữ liệu bài viết từ phần <main>
+  const articleElements = document.querySelectorAll('#articles article');
+  const articles = Array.from(articleElements).map((article, index) => ({
+    id: index,
+    title: article.querySelector('h4').textContent,
+    element: article // Lưu tham chiếu đến phần tử DOM
+  }));
+
+  // Cấu hình Fuse.js
+  const options = {
+    includeScore: true,
+    keys: ['title'], // Tìm kiếm theo tiêu đề
+    threshold: 0.4 // Độ nhạy của tìm kiếm gần đúng
+  };
+
+  const fuse = new Fuse(articles, options);
+
+  // Lấy các phần tử DOM
+  const searchInput = document.getElementById('searchInput');
+  const searchButton = document.getElementById('searchButton');
+
+  // Hàm hiển thị bài viết dựa trên kết quả tìm kiếm
+  function filterArticles(query) {
+    if (query === '') {
+      // Nếu không có từ khóa, hiển thị tất cả bài viết
+      articleElements.forEach(article => {
+        article.style.display = 'block';
+      });
+      return;
+    }
+
+    // Tìm kiếm với Fuse.js
+    const results = fuse.search(query);
+
+    // Ẩn tất cả bài viết trước
+    articleElements.forEach(article => {
+      article.style.display = 'none';
+    });
+
+    // Hiển thị các bài viết khớp với tìm kiếm
+    results.forEach(result => {
+      result.item.element.style.display = 'block';
+    });
+
+    // Nếu không có kết quả, hiển thị thông báo
+    if (results.length === 0) {
+      const noResults = document.createElement('p');
+      noResults.className = 'text-gray-400';
+      noResults.textContent = 'Không tìm thấy kết quả.';
+      document.getElementById('articles').appendChild(noResults);
+    }
+  }
+
+  // Sự kiện khi nhấn nút tìm kiếm
+  searchButton.addEventListener('click', () => {
+    const query = searchInput.value.trim();
+    filterArticles(query);
+  });
+
+  // Sự kiện tìm kiếm động khi người dùng nhập
+  searchInput.addEventListener('input', () => {
+    const query = searchInput.value.trim();
+    filterArticles(query);
+  });
+</script>
+</body>
+</html>
