@@ -188,37 +188,44 @@
   </aside>
 </div>
 
-<div class="max-w-2xl mx-auto mt-8 p-6 bg-white rounded-lg shadow-md bg-gray-100">
-  <div id="comments">
-    <!-- Bình luận sẽ được thêm động bằng JavaScript -->
-  </div>
-  <!-- Form nhập bình luận -->
+<div class="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow">
+  <!-- Biểu mẫu bình luận -->
   <form id="commentForm" class="mb-6">
     <div class="mb-4">
       <label for="author" class="block text-gray-700 font-semibold mb-2">Tên:</label>
-      <input type="text" id="author" name="author" required
-             class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900 bg-white"
-             placeholder="Nhập tên của bạn">
+      <input type="text" id="author" name="author" class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900 bg-white" required>
     </div>
     <div class="mb-4">
       <label for="text" class="block text-gray-700 font-semibold mb-2">Bình luận:</label>
-      <textarea id="text" name="text" required
-                class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900 bg-white"
-                rows="4" placeholder="Nhập bình luận của bạn"></textarea>
+      <textarea id="text" name="text" class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900 bg-white" rows="4" required></textarea>
     </div>
-    <button type="submit"
-            class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">
-      Gửi bình luận
-    </button>
+    <div class="mb-4">
+      <label class="block text-gray-700 font-semibold mb-2">Đánh giá:</label>
+      <div class="flex items-center space-x-2">
+        <input type="radio" id="star1" name="rating" value="1" class="hidden" required>
+        <label for="star1" class="text-2xl cursor-pointer text-gray-300 hover:text-yellow-400 transition-colors">★</label>
+        <input type="radio" id="star2" name="rating" value="2" class="hidden">
+        <label for="star2" class="text-2xl cursor-pointer text-gray-300 hover:text-yellow-400 transition-colors">★</label>
+        <input type="radio" id="star3" name="rating" value="3" class="hidden">
+        <label for="star3" class="text-2xl cursor-pointer text-gray-300 hover:text-yellow-400 transition-colors">★</label>
+        <input type="radio" id="star4" name="rating" value="4" class="hidden">
+        <label for="star4" class="text-2xl cursor-pointer text-gray-300 hover:text-yellow-400 transition-colors">★</label>
+        <input type="radio" id="star5" name="rating" value="5" class="hidden">
+        <label for="star5" class="text-2xl cursor-pointer text-gray-300 hover:text-yellow-400 transition-colors">★</label>
+      </div>
+    </div>
+    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors">Gửi bình luận</button>
   </form>
+
+  <!-- Khu vực hiển thị bình luận -->
+  <div id="comments" class="space-y-4"></div>
 </div>
 
 <script>
-  // Dữ liệu bình luận mẫu (ban đầu)
   let commentsData = [
-    { author: "Nguyễn Văn An", text: "Bài viết rất hay, cảm ơn bạn!" },
-    { author: "Trần Thị Thu", text: "Tôi đồng ý với quan điểm này." },
-    { author: "Lê Văn Luyện", text: "Có thể bổ sung thêm thông tin về chủ đề này không?" }
+    { author: "Nguyễn Văn An", text: "Bài viết rất hay, cảm ơn bạn!", rating: 5 },
+    { author: "Trần Thị Thu", text: "Tôi đồng ý với quan điểm này.", rating: 4 },
+    { author: "Lê Văn Luyện", text: "Có thể bổ sung thêm thông tin về chủ đề này không?", rating: 3 }
   ];
 
   // Hàm hiển thị bình luận
@@ -229,36 +236,44 @@
     comments.forEach(comment => {
       const commentElement = document.createElement("div");
       commentElement.className = "p-4 border-b border-gray-200 last:border-b-0";
+      // Hiển thị số sao bằng ký hiệu ngôi sao (★) với màu vàng
+      const starRating = "★".repeat(comment.rating) + "☆".repeat(5 - comment.rating);
       commentElement.innerHTML = `
-                    <p class="font-semibold text-gray-800">${comment.author}</p>
-                    <p class="text-gray-600 mt-1">${comment.text}</p>
-                `;
+      <p class="font-semibold text-gray-800">${comment.author}</p>
+      <div class="flex items-center mt-1">
+        <span class="text-yellow-400 text-lg">${starRating}</span>
+        <span class="ml-2 text-gray-500 text-sm">(${comment.rating}/5)</span>
+      </div>
+      <p class="text-gray-600 mt-2">${comment.text}</p>
+    `;
       commentsContainer.appendChild(commentElement);
     });
   }
 
-  // Xử lý sự kiện gửi form
+  // Xử lý sự kiện gửi biểu mẫu
   const commentForm = document.getElementById("commentForm");
   commentForm.addEventListener("submit", function (event) {
     event.preventDefault(); // Ngăn chặn reload trang
 
     const authorInput = document.getElementById("author");
     const textInput = document.getElementById("text");
+    const ratingInput = document.querySelector('input[name="rating"]:checked');
 
-    // Lấy giá trị từ form
+    // Lấy giá trị từ biểu mẫu
     const newComment = {
       author: authorInput.value.trim(),
-      text: textInput.value.trim()
+      text: textInput.value.trim(),
+      rating: ratingInput ? parseInt(ratingInput.value) : null
     };
 
     // Kiểm tra dữ liệu hợp lệ
-    if (newComment.author && newComment.text) {
+    if (newComment.author && newComment.text && newComment.rating) {
       // Thêm bình luận mới vào mảng
       commentsData.unshift(newComment); // Thêm vào đầu mảng
       displayComments(commentsData); // Cập nhật giao diện
-      commentForm.reset(); // Xóa form
+      commentForm.reset(); // Xóa biểu mẫu
     } else {
-      alert("Vui lòng nhập đầy đủ tên và nội dung bình luận.");
+      alert("Vui lòng nhập đầy đủ tên, nội dung bình luận và chọn số sao đánh giá.");
     }
   });
 
